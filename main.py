@@ -33,10 +33,10 @@ for user in users:
 
     if len(message):
         print "sending message"
-        # try:
-        #     print "Sending message to : " + user["phone"]
-        #     send_sms(user["phone"], message)
-        # except:
-        #     send_sms(user["phone"], message)
+        try:
+            print "Sending message to : " + user["phone"]
+            send_sms(user["phone"], message)
+        except:
+            send_sms(user["phone"], message)
     else:
         print "no message"
