@@ -6,16 +6,19 @@ from get_torrent import get_torrent
 
 available_dict = {}
 for key in show_dict.keys():
-    if os.path.isfile(key+".txt"):
-        print os.path.isfile(key+".txt")
-        f = open(key+".txt", "r").read()
+    if os.path.isfile("/home/gaurav/workspace/show-scrapper/showdir/"+key+".txt"):
+        print os.path.isfile("/home/gaurav/workspace/show-scrapper/showdir/"+key+".txt")
+        f = open("/home/gaurav/workspace/show-scrapper/showdir/"+key+".txt", "r").read()
         if len(f) > 0:
-            available_dict[key] = get_torrent(key)
+            if f != "no info":
+                available_dict[key] = get_torrent(key)
+            else:
+                get_release_dates(key)
+                available_dict[key] = ""
             
         else:
-            os.system("rm -rf "+key+".txt")
+            os.system("rm -rf "+"/home/gaurav/workspace/show-scrapper/showdir/"+key+".txt")
             get_release_dates(key)
-            os.system("python main.py")
 
     else:
         get_release_dates(key)
@@ -24,13 +27,16 @@ print available_dict
 for user in users:
     message = ""
     for show in user["shows"]:
+        print available_dict[show]
         if available_dict[show]:
+            print available_dict[show]
             message = message + "\n"+ available_dict[show]
-            f = open(show+".txt", "r").readlines()
-            if f[0].replace("\n", "") in available_dict[show]:
-                new = open(show+".txt", "wb")
+            f = open("/home/gaurav/workspace/show-scrapper/showdir/"+show+".txt", "r").readlines()
+            print f
+            if f and f[0].split("\n")[0].strip() in available_dict[show]:
+                new = open("/home/gaurav/workspace/show-scrapper/showdir/"+show+".txt", "wb")
                 new.write("".join(f[1:]))
-
+    print message
     if len(message):
         print "sending message"
         try:

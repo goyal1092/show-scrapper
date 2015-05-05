@@ -7,35 +7,33 @@ show_dict = {
     "the_big_bang_theory": "http://www.imdb.com/title/tt0898266/",
     "supernatural": "http://www.imdb.com/title/tt0460681/",
     "agents_of_shield": "http://www.imdb.com/title/tt2364582/",
-    "suits": "http://www.imdb.com/title/tt1632701/",
-    "sherlock": "http://www.imdb.com/title/tt1475582/",
-    "castle": "http://www.imdb.com/title/tt1219024/",
-    "homeland": "http://www.imdb.com/title/tt1796960/",
-    "person_of_intrest": "http://www.imdb.com/title/tt1839578/",
+    "person_of_interest": "http://www.imdb.com/title/tt1839578/",
     "grimm": "http://www.imdb.com/title/tt1830617/",
-    "agent_carter": "http://www.imdb.com/title/tt3475734/"
+    "castle": "http://www.imdb.com/title/tt1219024/?ref_=fn_al_tt_1",
+    "homeland": "http://www.imdb.com/title/tt1796960/?ref_=nv_sr_1"
 }
 
 users = [{
 	
 		"name": "Gaurav",
-		"phone": "xxxxxxxxx",
-		"shows": ["Flash", "Game_of_Thrones", "Arrow", "Gotham"],
-		"email": "xxxxxxxxx"
+		"phone": "9729494901",
+		"shows": ["Flash", "Game_of_Thrones", "Arrow", "Gotham", "Better_Call_Saul","the_big_bang_theory", "supernatural", "agents_of_shield","person_of_interest", "grimm" ],
+		"email": "gauravgoyal1092@gmail.com"
+	},
+	{
+
+		"name": "hemant",
+		"phone": "9729163173",
+                "shows": ["Flash", "Game_of_Thrones", "Arrow", "Gotham", "Better_Call_Saul","the_big_bang_theory", "supernatural", "agents_of_shield","person_of_interest", "grimm" ],
+                "email": "xxxxxxxxx"
+	},
+        {
+
+	 	"name": "Anurag",
+	 	"phone": "9501541232",
+	 	"shows": ["Flash", "Game_of_Thrones", "Arrow", "agents_of_shield"],
+	 	"email": "gauravgoyal1092@gmail.com"
 	}
-	# ,{
-
-	# 	"name": "xxxxxxxxxx",
-	# 	"phone": "xxxxxxxxxxxx",
-	# 	"shows": ["Flash", "Game_of_Thrones", "Arrow", "Gotham"],
-	# 	"email": "xxxxxxxxx"
-	# },{
-
-	# 	"name": "xxxxxxx",
-	# 	"phone": "xxxxxxxxxxxx",
-	# 	"shows": ["Flash", "Game_of_Thrones", "Arrow", "Gotham"],
-	# 	"email": "xxxxxxxxxx"
-	# }
 
 ]
 

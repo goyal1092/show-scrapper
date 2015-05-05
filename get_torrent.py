@@ -10,7 +10,7 @@ def get_torrent(show):
     source = urllib2.urlopen(url).read()
     tree = html.document_fromstring(source)
     
-    f = open(show+".txt", "r+")
+    f = open("/home/gaurav/workspace/show-scrapper/showdir/"+show+".txt", "r+")
     data = f.read()
     data = data.split("\n")[0].split(" ")
     tz_data = tree.itertext()

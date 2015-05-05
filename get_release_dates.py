@@ -7,7 +7,7 @@ from send_mail import send_mail
 current_day = datetime.now().day
 current_month = datetime.now().strftime("%B")
 if len(current_month) > 3:
-    current_month = current_month[:3]+ "."
+	current_month = current_month[:3]+ "."
 current_year = datetime.now().year
 
 
@@ -49,9 +49,9 @@ def get_release_dates(show):
 		# Get webpage from imdb
 		source = urllib2.urlopen(show_dict[show]).read()
 
-	    # Store show name in season_name
+		# Store show name in season_name
 		season_name = show
-	    
+
 		# MAke a lxml tree
 		tree = html.document_fromstring(source)
 
@@ -74,25 +74,27 @@ def get_release_dates(show):
 		is_date = False
 
 		# open a text file as "show.txt" to write season name seasonNo and Episodde no to come
-		f = open(season_name+".txt", "wb")
-
+		f = open("/home/gaurav/workspace/show-scrapper/showdir/"+season_name+".txt", "wb")
+		print season_name
 		# Get episode No
 		for date in airdate:
-		    season_ep = set_episode_structure(date.getparent().getprevious().cssselect("a div")[1].text)
+			season_ep = set_episode_structure(date.getparent().getprevious().cssselect("a div")[1].text)
 
-		    if not is_date:
-		        date =  date.text.strip().split()
-		        date[1] = month[date[1]]
-		        date[2] = date[2].replace('20', '')
-		        d = ("/").join(date)
-		        season_date = datetime.strptime(d, '%d/%m/%y')
-		        if season_date > datetime.now():
-		            is_date = True
-		            f.write(season_name+ " "+season_ep+ "\n")
-		        else:
-		            print season_date
-		    else: 
-		        f.write(season_name+ " "+season_ep+ "\n")
-	
+			if not is_date:
+				date =  date.text.strip().split()
+				date[1] = month[date[1]]
+				date[2] = date[2].replace('20', '')
+				d = ("/").join(date)
+				season_date = datetime.strptime(d, '%d/%m/%y')
+				if season_date > datetime.now():
+					is_date = True
+					f.write(season_name+ " "+season_ep+ "\n")
+				else:
+					print season_date
+			else:
+				f.write(season_name+ " "+season_ep+ "\n")
+		if not is_date:
+			f.write("no info")
+
 	except Exception as e:
 		print e

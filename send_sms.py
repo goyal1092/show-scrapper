@@ -11,8 +11,8 @@ def send_sms(number, message):
 	Send sms
 	"""
 
-	username = "xxxxxxxxxx"
-	passwd = "xxxxxxxxxxx"
+	username = "9729494901"
+	passwd = "goodisbad"
 	message =  message
 	number = number
 	message = "+".join(message.split(' '))
